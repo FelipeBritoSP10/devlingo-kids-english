@@ -6,20 +6,46 @@
   --neon-glow: rgba(37, 99, 235, 0.25);
 }
 
+/* Base responsiva */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  width: 100%;
+  min-width: 0;
+}
+
 body {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
   font-family: 'Inter', sans-serif;
   user-select: none;
   background-color: #f8fafc;
+  overflow-x: clip;
 }
 
+/* Emojis responsivos */
 .emoji-display {
-  font-size: 4.5rem;
+  display: block;
+  max-width: 100%;
+  font-size: clamp(2rem, 10vw, 4.5rem);
+  line-height: 1.2;
+  text-align: center;
+  overflow-wrap: anywhere;
 }
 
+/* Botão de dica */
 .btn-hint {
   background-color: var(--accent-blue-light);
   color: var(--accent-blue);
   border: 2px solid var(--accent-blue-border);
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
 
 .btn-hint:hover {
@@ -27,23 +53,27 @@ body {
   color: var(--accent-blue);
 }
 
+/* Microfone ativo */
 .mic-listening {
   background-color: #dc2626 !important;
   color: #ffffff !important;
   animation: pulse-mic 1s infinite;
 }
 
+/* Elementos desabilitados */
 .interaction-disabled {
   pointer-events: none !important;
   opacity: 0.85;
 }
 
+/* Overlay inicial */
 #start-overlay {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  height: 100dvh;
+  padding: 1rem;
   background: rgba(248, 250, 252, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
@@ -55,58 +85,115 @@ body {
   transition: opacity 0.4s ease, visibility 0.4s ease;
 }
 
+/* Card inicial */
 .start-card {
+  width: 100%;
+  max-width: 480px;
+  min-width: 0;
+  padding: clamp(1.25rem, 5vw, 3rem);
   background: rgba(255, 255, 255, 0.95);
   border: 2px solid var(--accent-blue-border);
   border-radius: 2rem;
-  padding: 3rem 2.5rem;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05), 0 0 30px var(--neon-glow);
-  max-width: 480px;
-  width: 90%;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.05),
+    0 0 30px var(--neon-glow);
 }
 
+/* Mascote interativo */
 .mascot-interactive {
-  font-size: 5.5rem;
-  cursor: pointer;
   display: inline-block;
+  max-width: 100%;
+  font-size: clamp(3rem, 12vw, 5.5rem);
+  line-height: 1.2;
+  cursor: pointer;
   animation: float 3s ease-in-out infinite;
   transition: transform 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-.mascot-interactive:hover, .mascot-interactive:active {
-  transform: scale(1.15) rotate(5deg);
+.mascot-interactive:hover,
+.mascot-interactive:active {
+  transform: scale(1.08) rotate(5deg);
 }
 
+/* Animações */
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
 
 .btn-play-interactive {
+  max-width: 100%;
+  white-space: normal;
+  overflow-wrap: anywhere;
   background-color: var(--accent-blue);
   color: #ffffff;
   border: none;
   font-weight: 900;
   letter-spacing: 1px;
   box-shadow: 0 10px 25px var(--neon-glow);
-  transition: all 0.2s ease;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .btn-play-interactive:hover {
   background-color: var(--accent-blue-hover);
   color: #ffffff;
-  transform: translateY(-2px);
   box-shadow: 0 12px 28px var(--neon-glow);
 }
 
 .badge-accessibility {
+  max-width: 100%;
+  white-space: normal;
   background-color: var(--accent-blue-light);
   color: var(--accent-blue);
   border: 1px solid var(--accent-blue-border);
 }
 
 @keyframes pulse-mic {
-  0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7); }
-  70% { transform: scale(1.05); box-shadow: 0 0 0 15px rgba(220, 38, 38, 0); }
-  100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(220, 38, 38, 0); }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0.7);
+  }
+
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 0 15px rgba(220, 38, 38, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(220, 38, 38, 0);
+  }
+}
+
+/* Celulares pequenos */
+@media (max-width: 360px) {
+  .emoji-display {
+    font-size: clamp(1.75rem, 9vw, 2.5rem);
+  }
+
+  .start-card {
+    padding: 1.25rem 1rem;
+    border-radius: 1.5rem;
+  }
+
+  .mascot-interactive {
+    font-size: 3rem;
+  }
+}
+
+/* Reduz movimentos para quem prefere menos animações */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
