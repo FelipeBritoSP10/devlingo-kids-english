@@ -7,264 +7,53 @@
   <meta name="theme-color" content="#eff6ff">
   <title>DevLingo Kids English</title>
   <!-- Bootstrap 5.3 -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-  rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet" >
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <!-- Confetti -->
-  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer>
-  </script>
-  <!-- Estilos existentes -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js" defer></script>
+  <!-- Estilos da aplicação -->
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="stylesheet" href="styles/worlds.css">
 </head>
 
 <body class="min-vh-100 py-4">
 
-  <!-- Tela inicial -->
-  <div id="start-overlay">
-    <div class="start-card text-center">
-      <div id="mascot" class="mascot-interactive mb-2"
-        role="button"
-        tabindex="0"
-        aria-label="Mascote interativo">
-        🐶
-      </div>
-
-      <h1 class="fw-black text-dark mb-1 fs-2">
-        DevLingo
-        <span style="color: var(--accent-blue);">Kids</span>
-      </h1>
-
-      <p class="text-secondary fw-bold fs-6 mb-4">
-        Aprenda inglês no seu ritmo!
-      </p>
-
-      <button id="btn-start-game"
-        class="btn btn-play-interactive btn-lg rounded-pill px-5 py-3 fs-3 w-100 mb-3 shadow-sm"
-        type="button">
-        ▶️ PLAY
-      </button>
-
-      <div class="d-flex justify-content-center flex-wrap gap-2">
-        <span class="badge rounded-pill badge-accessibility px-3 py-2 fw-semibold">
-          🔊 Som Ativo
-        </span>
-
-        <span class="badge rounded-pill badge-accessibility px-3 py-2 fw-semibold">
-          🎙️ Voz Ativa
-        </span>
-      </div>
-    </div>
-  </div>
+  <!-- Tela inicial componentizada -->
+  <devlingo-start-screen></devlingo-start-screen>
 
   <!-- Anúncios acessíveis para leitores de tela -->
-  <div id="sr-announcer" class="visually-hidden"
-    aria-live="polite"
-    aria-atomic="true"
-  ></div>
+  <div id="sr-announcer" class="visually-hidden" aria-live="polite" aria-atomic="true"></div>
 
   <div class="container" style="max-width: 1100px;">
 
-    <!-- Cabeçalho existente -->
+    <!-- Cabeçalho -->
     <devlingo-header id="app-header"></devlingo-header>
 
-      <div class="text-start my-3">
-      <button id="btn-home" href="./pages/worlds.html"
-      type="button" class="btn btn-outline-primary rounded-pill fw-bold px-4">
+    <div class="text-start my-3">
+      <button id="btn-home" type="button" class="btn btn-outline-primary rounded-pill fw-bold px-4">
         🏠 Voltar ao início
       </button>
     </div>
 
-    <!-- Seleção de mundos -->
-    <section id="worlds-screen" class="d-none"
-      aria-labelledby="worlds-title">
-      <header class="text-center my-4">
-        <div class="fs-1 mb-2" aria-hidden="true">🌎 ⭐ 🐶</div>
+    <!-- Seleção de mundos componentizada -->
+    <devlingo-worlds-screen id="worlds-screen" class="d-none" aria-labelledby="worlds-title"></devlingo-worlds-screen>
 
-        <h2 id="worlds-title" class="worlds-heading fw-black">
-          Escolha uma fase!
-        </h2>
-
-        <p class="worlds-subtitle fw-semibold mb-0">
-          Complete os desafios e descubra novos mundos!
-        </p>
-      </header>
-
-      <!-- Progresso da campanha -->
-      <section
-        class="campaign-progress mb-4"
-        aria-label="Progresso da campanha">
-        <div class="d-flex justify-content-between align-items-center gap-2 mb-2">
-          <span class="fw-bold text-dark">
-            🏆 Sua aventura
-          </span>
-          <span id="progress-label" class="small fw-bold text-primary">
-            1 de 10 mundos
-          </span>
-        </div>
-
-        <div
-          class="progress"
-          role="progressbar"
-          aria-label="Progresso dos mundos desbloqueados"
-          aria-valuemin="0"
-          aria-valuemax="10"
-          aria-valuenow="1"
-          id="campaign-progress">
-          <div id="progress-bar" class="progress-bar"
-          style="width: 10%;">
-        </div>
-        </div>
-      </section>
-
-      <!-- Os cards serão conectados ao AppState pelo app.js -->
-      <div id="worlds-grid" class="worlds-grid">
-        <button
-          class="world-card"
-          type="button"
-          data-world="Animals"
-          aria-label="Jogar mundo Animals, animais" >
-          <span class="world-emoji" aria-hidden="true">🐶 🐱</span>
-          <span class="world-name">Animals</span>
-          <span class="world-translation">Animais</span>
-          <span class="world-status">🔓 Desbloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="Colors"
-          disabled
-          aria-label="Colors, cores. Mundo bloqueado">
-          <span class="world-emoji" aria-hidden="true">🎨 🖌️</span>
-          <span class="world-name">Colors</span>
-          <span class="world-translation">Cores</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="Numbers"
-          disabled
-          aria-label="Numbers, números. Mundo bloqueado">
-          <span class="world-emoji" aria-hidden="true">🔢 ⭐</span>
-          <span class="world-name">Numbers</span>
-          <span class="world-translation">Números</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="Food"
-          disabled
-          aria-label="Food, alimentos. Mundo bloqueado">
-          <span class="world-emoji" aria-hidden="true">🍎 🍌</span>
-          <span class="world-name">Food</span>
-          <span class="world-translation">Alimentos</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="Objects"
-          disabled
-          aria-label="Objects, objetos. Mundo bloqueado" >
-          <span class="world-emoji" aria-hidden="true">🧸 ⚽</span>
-          <span class="world-name">Objects</span>
-          <span class="world-translation">Objetos</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="Clothes"
-          disabled
-          aria-label="Clothes, roupas. Mundo bloqueado">
-          <span class="world-emoji" aria-hidden="true">👕 👟</span>
-          <span class="world-name">Clothes</span>
-          <span class="world-translation">Roupas</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="Family"
-          disabled
-          aria-label="Family, família. Mundo bloqueado">
-          <span class="world-emoji" aria-hidden="true">👨‍👩‍👧</span>
-          <span class="world-name">Family</span>
-          <span class="world-translation">Família</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="House"
-          disabled
-          aria-label="House, casa. Mundo bloqueado">
-          <span class="world-emoji" aria-hidden="true">🏠 🛏️</span>
-          <span class="world-name">House</span>
-          <span class="world-translation">Casa</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="Weather"
-          disabled
-          aria-label="Weather, clima. Mundo bloqueado">
-          <span class="world-emoji" aria-hidden="true">☀️ 🌧️</span>
-          <span class="world-name">Weather</span>
-          <span class="world-translation">Clima</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-        <button
-          class="world-card"
-          type="button"
-          data-world="Transportation"
-          disabled
-          aria-label="Transportation, transporte. Mundo bloqueado">
-          <span class="world-emoji" aria-hidden="true">🚗 ✈️</span>
-          <span class="world-name">Transportation</span>
-          <span class="world-translation">Transporte</span>
-          <span class="world-status">🔒 Bloqueado</span>
-        </button>
-
-      </div>
-
-      <footer class="text-center mt-4 mb-3">
-        <p class="fw-bold text-primary">
-          ⭐ Cada fase é uma nova aventura! ⭐
-        </p>
-      </footer>
-    </section>
-
-    <!-- Área do jogo existente -->
+    <!-- Área principal do jogo -->
     <main id="game-screen" class="card border-2 rounded-5 shadow-sm p-4 p-md-5 text-center bg-white d-none"
       style="border-color: var(--accent-blue-border) !important;">
       <devlingo-step-choose id="step-choose"></devlingo-step-choose>
-      <devlingo-step-speak id="step-speak" class="d-none"
-      ></devlingo-step-speak>
+      <devlingo-step-speak id="step-speak" class="d-none"></devlingo-step-speak>
     </main>
 
   </div>
 
-  <!-- Modal de dicas existente -->
+  <!-- Modal de dicas -->
   <devlingo-hint-modal id="hint-modal"></devlingo-hint-modal>
 
-  <!-- Bootstrap -->
+  <!-- Scripts -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Lógica atual da aplicação -->
   <script type="module" src="js/app.js"></script>
+
 </body>
 </html>

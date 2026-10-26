@@ -14,20 +14,17 @@
 <body class="worlds-page min-vh-100 py-4">
 
     <div class="container worlds-container">
-            <div class="text-end">
-                <span class="d-block small text-secondary">Sua pontuação</span>
-                <strong id="score-label" class="fs-5">⭐ 0</strong>
-            </div>
-        </header>
+        <div class="text-end">
+            <span class="d-block small text-secondary">Sua pontuação</span>
+            <strong id="score-label" class="fs-5">⭐ 0</strong>
+        </div>
 
         <main>
             <section class="text-center worlds-intro mb-4">
                 <div class="worlds-mascot mb-2" aria-hidden="true">🐶 🌎</div>
-
                 <h1 class="worlds-heading fw-black" id="worlds-title">
                     Escolha uma fase!
                 </h1>
-
                 <p class="worlds-subtitle">
                     Complete os desafios e desbloqueie novos mundos!
                 </p>
@@ -42,7 +39,7 @@
                 </div>
 
                 <div id="campaign-progress" class="progress" role="progressbar" aria-label="Mundos desbloqueados"
-                    aria-valuemin="0" aria-valuemax="10" aria-valuenow="1">
+                aria-valuemin="0" aria-valuemax="10" aria-valuenow="1">
                     <div id="progress-bar" class="progress-bar" style="width: 10%"></div>
                 </div>
             </section>
@@ -52,79 +49,8 @@
                     Mundos disponíveis
                 </h2>
 
-                <div id="worlds-grid" class="worlds-grid">
-
-                    <button class="world-card" data-world="Animals" type="button">
-                        <span class="world-emoji" aria-hidden="true">🐶 🐱</span>
-                        <span class="world-name">Animals</span>
-                        <span class="world-translation">Animais</span>
-                        <span class="world-status">🔓 Desbloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="Colors" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">🎨 🖌️</span>
-                        <span class="world-name">Colors</span>
-                        <span class="world-translation">Cores</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="Numbers" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">🔢 ⭐</span>
-                        <span class="world-name">Numbers</span>
-                        <span class="world-translation">Números</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="Food" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">🍎 🍌</span>
-                        <span class="world-name">Food</span>
-                        <span class="world-translation">Alimentos</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="Objects" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">🧸 ⚽</span>
-                        <span class="world-name">Objects</span>
-                        <span class="world-translation">Objetos</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="Clothes" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">👕 👟</span>
-                        <span class="world-name">Clothes</span>
-                        <span class="world-translation">Roupas</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="Family" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">👨‍👩‍👧</span>
-                        <span class="world-name">Family</span>
-                        <span class="world-translation">Família</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="House" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">🏠 🛏️</span>
-                        <span class="world-name">House</span>
-                        <span class="world-translation">Casa</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="Weather" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">☀️ 🌧️</span>
-                        <span class="world-name">Weather</span>
-                        <span class="world-translation">Clima</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                    <button class="world-card" data-world="Transportation" type="button" disabled>
-                        <span class="world-emoji" aria-hidden="true">🚗 ✈️</span>
-                        <span class="world-name">Transportation</span>
-                        <span class="world-translation">Transportes</span>
-                        <span class="world-status">🔒 Bloqueado</span>
-                    </button>
-
-                </div>
+                <!-- O grid será preenchido dinamicamente pelo worlds.js -->
+                <div id="worlds-grid" class="worlds-grid"></div>
             </section>
 
             <footer class="text-center mt-4">
@@ -135,7 +61,6 @@
         </main>
     </div>
 
-<script type="module" src="../js/worlds.js"></script>
-
+    <script type="module" src="../js/worlds.js"></script>
 </body>
 </html>
