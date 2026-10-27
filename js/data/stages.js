@@ -91,25 +91,25 @@ export const STAGES = [
   },
   {
     world: "Numbers",
-    wordEn: "TWO",
-    wordPt: "Dois",
-    hintPt: "Você tem duas mãos!",
-    hintEn: "Pronúncia: TÚ",
+    wordEn: "FOUR",
+    wordPt: "Quatro",
+    hintPt: "É o número que vem depois do três!",
+    hintEn: "Pronúncia: FÓR",
     options: [
-      { emoji: "3️⃣", labelEn: "THREE", correct: false },
-      { emoji: "2️⃣", labelEn: "TWO", correct: true },
-      { emoji: "1️⃣", labelEn: "ONE", correct: false }
-    ]
+    { emoji: "3️⃣", labelEn: "THREE", correct: false },
+    { emoji: "4️⃣", labelEn: "FOUR", correct: true },
+    { emoji: "5️⃣", labelEn: "FIVE", correct: false }
+  ]
   },
   {
     world: "Numbers",
-    wordEn: "THREE",
-    wordPt: "Três",
-    hintPt: "Conte: um, dois, três!",
-    hintEn: "Pronúncia: THRÍ",
+    wordEn: "NINE",
+    wordPt: "Nove",
+    hintPt: "Número que vem depois do oito",
+    hintEn: "Pronúncia: NÁIN",
     options: [
       { emoji: "1️⃣", labelEn: "ONE", correct: false },
-      { emoji: "3️⃣", labelEn: "THREE", correct: true },
+      { emoji: "9️⃣", labelEn: "NINE", correct: true },
       { emoji: "2️⃣", labelEn: "TWO", correct: false }
     ]
   },
