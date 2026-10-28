@@ -77,18 +77,6 @@ export const STAGES = [
   },
 
   // 🔢 NUMBERS
- {
-    world: "Numbers",
-    wordEn: "SEVEN",
-    wordPt: "Sete",
-    hintPt: "É a quantidade de dias da semana!",
-    hintEn: "Pronúncia: SE-VEN",
-      options: [
-      { emoji: "5️⃣", labelEn: "FIVE", correct: false },
-      { emoji: "6️⃣", labelEn: "SIX", correct: false },
-      { emoji: "7️⃣", labelEn: "SEVEN", correct: true }
-    ]
-  },
   {
     world: "Numbers",
     wordEn: "FOUR",
