@@ -91,13 +91,13 @@ export const STAGES = [
   },
   {
     world: "Numbers",
-    wordEn: "NINE",
-    wordPt: "Nove",
-    hintPt: "Número que vem depois do oito",
-    hintEn: "Pronúncia: NÁIN",
+    wordEn: "SIX",
+    wordPt: "Seis",
+    hintPt: "Quantidade de lados de um dado",
+    hintEn: "Pronúncia: SÍKS",
     options: [
       { emoji: "1️⃣", labelEn: "ONE", correct: false },
-      { emoji: "9️⃣", labelEn: "NINE", correct: true },
+      { emoji: "6️⃣", labelEn: "SIX", correct: true },
       { emoji: "2️⃣", labelEn: "TWO", correct: false }
     ]
   },
@@ -295,13 +295,13 @@ export const STAGES = [
   // 🌦️ WEATHER
   {
     world: "Weather",
-    wordEn: "SUN",
-    wordPt: "Sol",
-    hintPt: "Ele ilumina o céu durante o dia!",
-    hintEn: "Pronúncia: SÂN",
+    wordEn: "RAINBOW",
+    wordPt: "Arco-íris",
+    hintPt: "Aparece colorido no céu!",
+    hintEn: "Pronúncia: RÊIN-BÔU",
     options: [
       { emoji: "🌙", labelEn: "MOON", correct: false },
-      { emoji: "☀️", labelEn: "SUN", correct: true },
+      { emoji: "🌈", labelEn: "RAINBOW", correct: true },
       { emoji: "🌧️", labelEn: "RAIN", correct: false }
     ]
   },
