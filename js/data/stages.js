@@ -82,7 +82,7 @@ export const STAGES = [
     wordEn: "FOUR",
     wordPt: "Quatro",
     hintPt: "É o número que vem depois do três!",
-    hintEn: "Pronúncia: FÓR",
+    hintEn: "Pronúncia: FOR",
     options: [
     { emoji: "3️⃣", labelEn: "THREE", correct: false },
     { emoji: "4️⃣", labelEn: "FOUR", correct: true },
