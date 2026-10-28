@@ -307,13 +307,13 @@ export const STAGES = [
   },
   {
     world: "Weather",
-    wordEn: "RAIN",
-    wordPt: "Chuva",
-    hintPt: "Ela cai das nuvens!",
-    hintEn: "Pronúncia: RÊIN",
+    wordEn: "SNOW",
+    wordPt: "Neve",
+    hintPt: "Ela é branca e fria!",
+    hintEn: "Pronúncia: SNÔU",
     options: [
-      { emoji: "❄️", labelEn: "SNOW", correct: false },
-      { emoji: "🌧️", labelEn: "RAIN", correct: true },
+      { emoji: "🌈", labelEn: "RAIN", correct: false },
+      { emoji: "❄️", labelEn: "SNOW", correct: true },
       { emoji: "☀️", labelEn: "SUN", correct: false }
     ]
   },
