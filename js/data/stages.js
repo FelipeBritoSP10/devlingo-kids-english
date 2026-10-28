@@ -79,14 +79,14 @@ export const STAGES = [
   // 🔢 NUMBERS
   {
     world: "Numbers",
-    wordEn: "ELEVEN",
-    wordPt: "Onze",
-    hintPt: "É o número que vem depois do dez!",
-    hintEn: "Pronúncia: I-LE-VEN",
-     options: [
-      { emoji: "1️⃣0️⃣", labelEn: "TEN", correct: false },
-      { emoji: "1️⃣1️⃣", labelEn: "ELEVEN", correct: true },
-      { emoji: "1️⃣2️⃣", labelEn: "TWELVE", correct: false }
+    wordEn: "TEN",
+    wordPt: "Dez",
+    hintPt: "É a quantidade total de dedos nas duas mãos!",
+    hintEn: "Pronúncia: TEN",
+    options: [
+      { emoji: "8️⃣", labelEn: "EIGHT", correct: false },
+      { emoji: "9️⃣", labelEn: "NINE", correct: false },
+      { emoji: "🔟", labelEn: "TEN", correct: true }
     ]
   },
   {
