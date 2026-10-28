@@ -77,16 +77,16 @@ export const STAGES = [
   },
 
   // 🔢 NUMBERS
-  {
+ {
     world: "Numbers",
-    wordEn: "TEN",
-    wordPt: "Dez",
-    hintPt: "É a quantidade total de dedos nas duas mãos!",
-    hintEn: "Pronúncia: TEN",
+    wordEn: "ZERO",
+    wordPt: "Zero",
+    hintPt: "Significa nenhuma quantidade!",
+    hintEn: "Pronúncia: ZI-ROU",
     options: [
-      { emoji: "8️⃣", labelEn: "EIGHT", correct: false },
-      { emoji: "9️⃣", labelEn: "NINE", correct: false },
-      { emoji: "🔟", labelEn: "TEN", correct: true }
+      { emoji: "0️⃣", labelEn: "ZERO", correct: true },
+      { emoji: "1️⃣", labelEn: "ONE", correct: false },
+      { emoji: "2️⃣", labelEn: "TWO", correct: false }
     ]
   },
   {
