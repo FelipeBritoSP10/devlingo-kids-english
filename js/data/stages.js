@@ -84,10 +84,10 @@ export const STAGES = [
     hintPt: "É o número que vem depois do três!",
     hintEn: "Pronúncia: FOR",
     options: [
-    { emoji: "3️⃣", labelEn: "THREE", correct: false },
-    { emoji: "4️⃣", labelEn: "FOUR", correct: true },
-    { emoji: "5️⃣", labelEn: "FIVE", correct: false }
-  ]
+      { emoji: "3️⃣", labelEn: "THREE", correct: false },
+      { emoji: "4️⃣", labelEn: "FOUR", correct: true },
+      { emoji: "5️⃣", labelEn: "FIVE", correct: false }
+    ]
   },
   {
     world: "Numbers",
